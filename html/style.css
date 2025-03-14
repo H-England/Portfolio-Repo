@@ -1,0 +1,441 @@
+/* ================================
+   CSS Variables & Global Styles
+=================================== */
+:root {
+    /* Color Palette */
+    --primary-color: #004569;       /* A refined blue accent */
+    --secondary-color: #9F5F05;     /* A complementary blue tone */
+    --accent-color: #D93A99;        /* A subtle green for buttons */
+    --background-color: #D8D8D8;     /* Light background */
+    --text-color: #264F73;          /* Dark text */
+    --border-color: #CCCCCC;        /* Soft borders */
+    --box-shadow:rgba(255, 255, 255, 0.2);/* Light shadow */
+    --content-bg: #D3CBCD;
+    
+    /* Component-specific */
+    --navbar-bg: #f1f1f1;
+    --navbar-text: 1A1814;
+    --btn-bg: var(--accent-color);
+    --btn-text: #000000;
+    --input-bg: #E0D6C7;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: none;
+  }
+  body.mode-loaded {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .navbar, .shadcn-main, .content-box, .shadcn-button{
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .logo-text{
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    text-align: left;
+  }
+  .dark-mode-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.4);
+  }
+  /* ================================
+     Dark Mode Overrides
+  =================================== */
+  body.dark-mode {
+    --primary-color: #FFCB9A;
+    --secondary-color: #60A5FA;
+    --accent-color: #22c55e;
+    --background-color: #272727;
+    --text-color: #D9B08C;
+    --border-color: #333333;
+    --box-shadow: rgba(0, 0, 0, 0.2);
+    --navbar-bg: #646464;
+    --navbar-text: #e5e7eb;
+    --btn-bg: var(--accent-color);
+    --btn-text: #ffffff;
+    --input-bg: #1f2937;
+    --content-bg: #2c3431;
+  }
+  
+  /* ================================
+     Navbar
+  =================================== */
+  .navbar {
+    width: 95%;
+    max-width: 2400px;
+    background: var(--navbar-bg) !important;;
+    -webkit-backdrop-filter: var(--blur-effect);
+    backdrop-filter: var(--blur-effect);
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px var(--box-shadow);
+    margin-top: 1.5rem;
+}
+  
+  .navbar .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    
+  }
+  
+  .navbar .nav-item {
+    margin: 0 0.5rem;
+  }
+  
+  .navbar .nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--navbar-text) !important;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .navbar .nav-link:hover,
+  .navbar .nav-link.active {
+    color: var(--primary-color) !important;
+    border-bottom: 2px solid var(--primary-color);
+  }
+  
+  /* Dark Mode for Navbar Links */
+  body.dark-mode .navbar .nav-link {
+    color: var(--navbar-text) !important;
+  }
+  
+  /* Dark Mode Toggle Button */
+  .navbar-darkmode {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  .navbar-darkmode:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  /* ================================
+     Main Content Area
+  =================================== */
+  .shadcn-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    max-width: 2500px;
+    max-height: 2400px;
+    margin: 0 auto;
+    padding-top: 5rem;
+  }
+  
+  /* Unified Content Box */
+  .content-box {
+    background: var(--content-bg);
+    -webkit-backdrop-filter: var(--blur-effect);
+    backdrop-filter: var(--blur-effect);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px var(--box-shadow);
+    width: 90%;
+    max-width: 1800px;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .cv-box{
+    background: var(--content-bg);
+    -webkit-backdrop-filter: var(--blur-effect);
+    backdrop-filter: var(--blur-effect);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px var(--box-shadow);
+    height: 1000px;
+    max-height: 2400px;
+    width: 100%;
+    max-width: 2400px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  .cv-box h1,
+  .cv-box p {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .intro-box {
+    padding: 2rem;
+    width: 75%;
+    max-width: 2400px;
+    box-shadow: 0 4px 12px var(--box-shadow);
+    background-color: var(--content-bg);
+  }
+
+  .info-section {
+    background-color: var(--border-color);
+    border-radius: 20px;
+    border: 2px solid var(--primary-color);
+    padding: 2rem;
+  }
+  .cv-section{
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    background-color: #323639;
+    border-radius: 20px;
+    border: 2px solid var(--primary-color);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cv-section iframe {
+    width: 100%;
+    height: 750px;
+    border-radius: 10px;
+    border: none;
+  }
+  .counter-box {
+    width: 50%;
+    max-width: 1800x;
+    background-color: var(--content-bg);
+  }
+  .boxes-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1800px;
+    gap: 1rem;
+  }
+  /* ================================
+     AWS Posts Section
+  =================================== */
+  #posts-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  #posts-container .news-item {
+    background-color: var(--content-bg);
+    border: 2px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px var(--box-shadow);
+    text-align: center;
+    transition: transform 0.2 ease;
+  }
+  #posts-container .news-item:hover {
+    transform: scale(1.2);
+  }
+  #posts-container .news-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  #post-container .news-item p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  #posts-container .news-item a {
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  #posts-container .news-item a:hover {
+    text-decoration: underline;
+    transform: scale(1.2);
+  }
+
+  
+  /* ================================
+     Headings & Text
+  =================================== */
+  .shadcn-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .shadcn-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* ================================
+     Buttons
+  =================================== */
+  .shadcn-button {
+    background: linear-gradient(135deg, var(--content-bg), var(--content-bg));
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .shadcn-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ================================
+     Form Styles
+  =================================== */
+  .shadcn-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+  
+  .shadcn-input,
+  .shadcn-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+
+    text-align: center;
+  }
+  
+  .shadcn-input:focus,
+  .shadcn-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
+  .shadcn-textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  /* ================================
+     View Counter
+  =================================== */
+  .shadcn-counter {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: var(--text-color);
+  }
+  .counter-heading{
+    padding: 2rem;
+    height: 100%;
+    max-height: 600px;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    background-color: var(--border-color);
+  }
+  
+  /* ================================
+     Certification Section
+  =================================== */
+  .certification-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-items: center;
+  }
+  
+  .certification {
+    text-align: center;
+  }
+  
+  .certification:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px var(--box-shadow);
+  }
+  
+  .certification-badge {
+    width: 100px;
+
+  }
+  
+  .certification-badge:hover {
+    transform: scale(1.1);
+  }
+  
+  .certification-title {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+
+  /* ================================
+     Footer
+  =================================== */
+  .shadcn-footer {
+    background-color: var(--navbar-bg);
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+  }
+  
+  .shadcn-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+  }
+  
+  /* ================================
+     Responsive Styles
+  =================================== */
+  @media (max-width: 768px) {
+    .navbar .navbar-nav .boxes-container{
+      flex-direction: column;
+    }
+    
+    .nav-link {
+      padding: 0.75rem 0;
+      font-size: 1rem;
+    }
+    
+    .navbar-darkmode {
+      margin: 0.5rem auto;
+    }
+  }
+  

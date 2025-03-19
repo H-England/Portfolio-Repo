@@ -5,7 +5,7 @@
     /* Color Palette */
     --primary-color: #004569;       /* A refined blue accent */
     --secondary-color: #9F5F05;     /* A complementary blue tone */
-    --accent-color: #D93A99;        /* A subtle green for buttons */
+    --accent-color: #ca94b4;        /* A subtle green for buttons */
     --background-color: #D8D8D8;     /* Light background */
     --text-color: #264F73;          /* Dark text */
     --border-color: #CCCCCC;        /* Soft borders */
@@ -299,7 +299,7 @@
      Buttons
   =================================== */
   .shadcn-button {
-    background: linear-gradient(135deg, var(--content-bg), var(--content-bg));
+    background: linear-gradient(135deg, var(--primary-bg), var(--content-bg));
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;

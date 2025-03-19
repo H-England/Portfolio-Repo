@@ -1,6 +1,10 @@
 #!/bin/bash
-set -e  # Exit if any command fails
+set -e
 
 echo "Stopping web server..."
-sudo systemctl stop apache2 || sudo systemctl stop httpd
-echo "Web server stopped successfully."
+if systemctl is-active --quiet httpd; then
+    sudo systemctl stop httpd
+    echo "Web server stopped successfully."
+else
+    echo "Web server is not running."
+fi

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
- fetch('FUNCTION_URL_HERE')
+ fetch('https://t2nvtah56tmuyxqoteghuq6wlm0xrvfj.lambda-url.us-east-1.on.aws')
      .then(response => response.json())
      .then(data => displayNews(data))
      .catch(error => console.error('Error fetching news:', error));

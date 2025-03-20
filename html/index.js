@@ -1,7 +1,7 @@
 // Function to update the view count from the API
 function updateViewCount() {
     // Replace the URL below with your actual Lambda function URL
-    fetch('FUNCTION_URL_HERE')
+    fetch('https://3kfwrmte3pv62wop3llv5ve4oq0lviam.lambda-url.us-east-1.on.aws')
       .then(response => response.json())
       .then(data => {
         if (data && data.ViewCount !== undefined) {
@@ -39,7 +39,7 @@ function updateViewCount() {
   
     // Send the data to the Lambda function URL
     // Replace the URL below with your actual Lambda function URL for handling form submissions
-    fetch('FUNCTION_URL_HERE', {
+    fetch('https://rzgkbrjdybtimj3bcj53aa2daq0yalvf.lambda-url.us-east-1.on.aws', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

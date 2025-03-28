@@ -14,7 +14,7 @@ function displayNews(newsItems) {
         newsElement.innerHTML = `
             <h3>${item.Title}</h3>
             <p>${item.Summary}</p>
-            <a href="${item.Link}" target="_blank">Read more</a>
+            <a href="${item.Link}" target="_blank">Read more...</a>
         `;
         
         // Add click event to open the modal with the clicked news post

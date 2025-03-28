@@ -3,21 +3,21 @@
 =================================== */
 :root {
     /* Color Palette */
-    --primary-color: #004569;       /* A refined blue accent */
-    --secondary-color: #9F5F05;     /* A complementary blue tone */
-    --accent-color: #ca94b4;        /* A subtle green for buttons */
-    --background-color: #D8D8D8;     /* Light background */
-    --text-color: #264F73;          /* Dark text */
-    --border-color: #CCCCCC;        /* Soft borders */
+    --primary-color: #ffffff;       /* A refined blue accent */
+    --secondary-color: #c34af3;     /* A complementary blue tone */
+    --accent-color: #c34af3;        /* A subtle green for buttons */
+    --background-color: #d8d8d8;     /* Light background */
+    --text-color: #ffffff;          /* Dark text */
+    --border-color: #004569;        /* Soft borders */
     --box-shadow:rgba(255, 255, 255, 0.2);/* Light shadow */
-    --content-bg: #D3CBCD;
+    --content-bg: #4e8cc5;
     
     /* Component-specific */
-    --navbar-bg: #f1f1f1;
-    --navbar-text: 1A1814;
+    --navbar-bg: #4e8cc5;
+    --navbar-text: #ffffff;
     --btn-bg: var(--accent-color);
     --btn-text: #000000;
-    --input-bg: #E0D6C7;
+    --input-bg: #ffffff;
   }
   
   body {
@@ -246,6 +246,9 @@
     gap: 1rem;
     padding: 1rem;
     text-align: center;
+    background-color: var(--border-color);
+    border: solid 2px var(--input-bg);
+    border-radius: 25px;
   }
   #posts-container .news-item {
     background-color: var(--content-bg);
@@ -257,7 +260,7 @@
     transition: transform 0.2 ease;
   }
   #posts-container .news-item:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
   }
   #posts-container .news-item h3 {
     font-size: 1.2rem;
@@ -270,7 +273,7 @@
   }
   #posts-container .news-item a {
     font-size: 1rem;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
     transition: transform 0.2s ease;
   }
@@ -374,13 +377,16 @@
   .certification-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    gap: 2px;
     padding: 2rem;
     justify-items: center;
   }
   
   .certification {
     text-align: center;
+    border: solid 2px var(--primary-color);
+    padding: 10px;
+    border-radius: 25px;
   }
   
   .certification:hover {
@@ -438,4 +444,77 @@
       margin: 0.5rem auto;
     }
   }
+  /* ================================
+     Modal Styles
+  =================================== */
+  .modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
   
+  .modal-content {
+    background-color: var(--content-bg);
+    padding: 2.5rem;  /* Increased padding to make the content look more spacious */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--box-shadow);
+    width: 75%;  /* Increased width by 15% from 60% to 75% */
+    max-width: 920px;  /* Increased max-width to make the modal wider */
+    text-align: center;
+    position: relative;
+    margin: 0; 
+    height: auto; 
+    border: solid 2px var(--primary-color);
+    border-radius: 25px;
+  }
+  
+  .modal-content a {
+    color: var(--secondary-color)!important;
+  }
+  
+  /* Modal Text - Increase text size */
+  .modal-content h3 {
+    font-size: 2rem; /* Increased font size for the modal title */
+    color: var(--primary-color);
+  }
+  
+  .modal-content p {
+    font-size: 1.5rem; /* Increased font size for the content text */
+    color: var(--text-color);
+    padding: 1rem;
+  }
+  .modal-content h2 {
+    color: var(--primary-color);
+  }
+  
+  /* Close Button */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--primary-color);
+  }
+  
+  .close:hover {
+    color: var(--secondary-color);
+  }
+  
+  .modal a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  
+  .modal a:hover {
+    text-decoration: underline;
+  }

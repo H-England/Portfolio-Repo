@@ -4,7 +4,7 @@
 :root {
     /* Color Palette */
     --primary-color: #ffffff;       /* A refined blue accent */
-    --secondary-color: #c34af3;     /* A complementary blue tone */
+    --secondary-color: #6d6d6d;     /* A complementary blue tone */
     --accent-color: #c34af3;        /* A subtle green for buttons */
     --background-color: #d8d8d8;     /* Light background */
     --text-color: #ffffff;          /* Dark text */
@@ -243,21 +243,25 @@
   #posts-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1.5rem;
+    padding: 1.5rem;
     text-align: center;
     background-color: var(--border-color);
     border: solid 2px var(--input-bg);
     border-radius: 25px;
+    height: auto;
   }
   #posts-container .news-item {
     background-color: var(--content-bg);
     border: 2px solid var(--primary-color);
+    min-height: 100px;
+    max-height: 400px;
     padding: 1rem;
     border-radius: 25px;
     box-shadow: 0 4px 12px var(--box-shadow);
     text-align: center;
     transition: transform 0.2 ease;
+    height: 100%;
   }
   #posts-container .news-item:hover {
     transform: scale(1.05);
@@ -267,9 +271,14 @@
     font-weight: 600;
     margin-bottom: 1rem;
   }
-  #post-container .news-item p {
+  #posts-container .news-item p {
     font-size: 1rem;
     margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limit text to 4 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   #posts-container .news-item a {
     font-size: 1rem;
@@ -453,7 +462,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 80%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1000;
     display: flex;
@@ -463,15 +472,15 @@
   
   .modal-content {
     background-color: var(--content-bg);
-    padding: 2.5rem;  /* Increased padding to make the content look more spacious */
     border-radius: 12px;
+    padding: 10px;
     box-shadow: 0 4px 12px var(--box-shadow);
     width: 75%;  /* Increased width by 15% from 60% to 75% */
     max-width: 920px;  /* Increased max-width to make the modal wider */
     text-align: center;
     position: relative;
     margin: 0; 
-    height: auto; 
+    height: auto;
     border: solid 2px var(--primary-color);
     border-radius: 25px;
   }

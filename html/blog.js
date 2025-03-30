@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     postHTML += `
                         <div class="news-item" onclick="openModal('${title}', \`${post.replace(/'/g, "\\'")}\`)">
                             <h3>${title}</h3>
-                            <p>${post.substring(0, 100)}</p>
+                            <p>${post.substring(1, 400)}</p>
                         </div>
                     `;
                 });
